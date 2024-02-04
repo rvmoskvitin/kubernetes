@@ -1,0 +1,25 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment-replicas
+  labels:
+    app: my-k8s-application
+    env: prod
+    owner: RomanMoskvitin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: practice-replicas
+  template:
+    metadata:
+      labels:
+        project: practice-replicas
+    spec:
+      containers:
+        - name: practice-replicas-web
+          image: rvmoskvitin/k8sphp:latest
+          ports:
+            - containerPort: 80

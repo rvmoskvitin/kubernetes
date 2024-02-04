@@ -1,0 +1,10 @@
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-cm
+  namespace: lesson16
+data:
+  colorgood: purple
+  colorbad: yellow
